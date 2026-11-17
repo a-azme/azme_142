@@ -7,7 +7,7 @@ public class EmployeeManager {
     private static String readFile() throws IOException {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
         String line = reader.readLine();
         reader.close();
         return line;
@@ -15,7 +15,7 @@ public class EmployeeManager {
 
     private static void writeFile(String data, boolean append) throws IOException {
         BufferedWriter writer = new BufferedWriter(
-                new FileWriter("employees.txt", append));
+                new FileWriter(Constants.EMPLOYEE_FILE, append));
         writer.write(data);
         writer.close();
     }
