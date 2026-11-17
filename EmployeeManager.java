@@ -1,3 +1,4 @@
+
 //File Name EmployeeManager.java
 import java.io.*;
 import java.util.*;
@@ -76,18 +77,8 @@ public class EmployeeManager {
             System.out.println("Loading data ...");
             try {
                 String line = readFile();
-                boolean inWord = false;
-                int count = 0;
-                for (char character : line.toCharArray()) {
-                    if (character == ' ') {
-                        if (!inWord) {
-                            count++;
-                            inWord = true;
-                        } else {
-                            inWord = false;
-                        }
-                    }
-                }
+                int count = new StringTokenizer(line).countTokens();
+
                 System.out.println(count + " word(s) found " + line.length());
             } catch (Exception exception) {
             }
