@@ -77,10 +77,9 @@ public class EmployeeManager {
             System.out.println("Loading data ...");
             try {
                 String line = readFile();
-                char[] chars = line.toCharArray();
                 boolean inWord = false;
                 int count = 0;
-                for (char character : chars) {
+                for (char character : line.toCharArray()) {
                     if (character == ' ') {
                         if (!inWord) {
                             count++;
@@ -90,7 +89,7 @@ public class EmployeeManager {
                         }
                     }
                 }
-                System.out.println(count + " word(s) found " + chars.length);
+                System.out.println(count + " word(s) found " + line.length());
             } catch (Exception exception) {
             }
             System.out.println("Data Loaded.");
