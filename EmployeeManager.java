@@ -110,6 +110,8 @@ public class EmployeeManager {
             } catch (Exception exception) {
             }
             System.out.println("Data Deleted.");
+        } else {
+            System.out.println("Error: Invalid argument.");
         }
     }
 }
