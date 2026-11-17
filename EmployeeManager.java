@@ -62,13 +62,12 @@ public class EmployeeManager {
             try {
                 String line = readFile();
                 String[] employees = line.split(",");
-                boolean found = false;
                 String searchName = args[0].substring(1);
-                for (int index = 0; index < employees.length && !found; index++) {
-                    if (employees[index].equals(searchName)) {
-                        System.out.println("Employee found!");
-                        found = true;
-                    }
+
+                if (Arrays.asList(employees).contains(searchName)) {
+                    System.out.println("Employee found!");
+                } else {
+                    System.out.println("Employee not found!");
                 }
             } catch (Exception exception) {
             }
